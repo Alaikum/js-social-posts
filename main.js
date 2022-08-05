@@ -124,15 +124,20 @@ function onLoop(posts) {
 
 // raccolgo tutti i bottone 
 const buttonElement = document.querySelectorAll('.like-button')
+const likeCounter = document.querySelectorAll('.js-likes-counter')
 
+const id=[]
 
-
-// per ogni bottone do il click
-buttonElement.forEach(function(element){
-    element.addEventListener('click', function() {
+// per ogni bottone do il click e aumento contatore pusho ID in const id
+buttonElement.forEach(function (element, i) {
+    element.addEventListener('click', function () {
         this.classList.toggle('like__unlike');
-    } );
+        likeCounter[i].innerHTML = posts[i].likes + 1
+        // console.log(posts[i].id)
+        id.push(posts[i].id)
+        console.log(id)
+    });
 })
 
-
+console.log(id)
 

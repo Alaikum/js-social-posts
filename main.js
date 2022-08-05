@@ -83,11 +83,13 @@ posts.forEach(onLoop)
 // funzione per  stampare i dati 
 function onLoop(posts) {
 
+    let imageAuthor=posts.author.image
+ if(posts.author.image==null){imageAuthor=''}
     divElement.innerHTML += `  <div class="post">
     <div class="post__header">
         <div class="post-meta">                    
             <div class="post-meta__icon">
-                <img class="profile-pic" src="${posts.author.image}" alt="${posts.author.name}">                    
+                <img class="profile-pic" src="${imageAuthor}" alt="${posts.author.name}">                    
             </div>
             <div class="post-meta__data">
                 <div class="post-meta__author">${posts.author.name}</div>

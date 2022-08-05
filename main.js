@@ -102,7 +102,7 @@ function onLoop(posts) {
     <div class="post__footer">
         <div class="likes js-likes">
             <div class="likes__cta">
-                <a class="like-button  js-like-button" href="#" data-postid="${posts.id}">
+                <a class="like-button  js-like-button" href="#/" data-postid="${posts.id}">
                     <i class="like-button__icon fas fa-thumbs-up" aria-hidden="true"></i>
                     <span class="like-button__label">Mi Piace</span>
                 </a>
@@ -113,4 +113,26 @@ function onLoop(posts) {
         </div> 
     </div>            
 </div> `
+
+
 }
+
+// Milestone 3
+// Se clicchiamo sul tasto “Mi Piace” cambiamo il colore al 
+// testo del bottone e incrementiamo il counter dei likes relativo.
+//  Salviamo in un secondo array gli id dei post ai quali abbiamo messo il like.
+
+// raccolgo tutti i bottone 
+const buttonElement = document.querySelectorAll('.like-button')
+
+
+
+// per ogni bottone do il click
+buttonElement.forEach(function(element){
+    element.addEventListener('click', function() {
+        this.classList.toggle('like__unlike');
+    } );
+})
+
+
+
